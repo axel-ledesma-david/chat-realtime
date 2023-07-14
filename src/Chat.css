@@ -1,0 +1,130 @@
+.chat {
+    width: 37vw;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid rgb(94, 88, 88) 1px;
+    background-color: rgb(255, 255, 255);
+}
+
+.header-chat {
+    height: 30px;
+    width: 100%;
+    background-color: rgb(79, 99, 107);
+    border: solid black 1px;
+    padding: 3px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3px;
+    color: white;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: rgb(64, 211, 64);
+}
+
+textarea {
+    resize: none;
+    outline: none;
+    width: 100%;
+}
+
+.send-btn {
+    padding: 10px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    background-color: rgb(135, 190, 172);
+    border: solid black 0.50px;
+    cursor: pointer;
+} 
+
+.send-btn:hover {
+    border: none;
+    background-color: rgb(76, 201, 159);
+    
+}
+
+.footer-chat {
+    display: flex;
+    height: 30px;
+}
+
+
+.me {
+    justify-content: flex-end;
+}
+
+.other {
+    justify-content: flex-start;
+}
+
+.end {
+    text-align: end;
+}
+
+.start {
+    text-align: start;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: darkslategray;
+    border-radius: 15px;
+}
+
+.message-container {
+    display: flex;
+    height: auto;
+}
+
+.message-content {
+    padding: 0;
+}
+
+.message {
+    background-color: rgba(117, 167, 168, 0.87);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    height: auto;
+    max-width: 250px;
+    padding: 3px;
+}
+
+.footer-chat {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 870px) {
+    .chat {
+        width: 70vw;
+    }
+}
+
+/* 
+.timestamp {
+    height: 0;
+} */
