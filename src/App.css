@@ -13,20 +13,54 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  background-image: url(./assets/background/3626052.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.form-join {
+  
+  display: flex;
+  gap: 5px;
 }
 
 .btn-join {
   width: 150px;
-  background-color: darkseagreen;
-  border-radius: 15px;
+  background-color: rgba(143, 188, 143, 0.212);
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  border: solid rgba(255, 255, 255, 0.678) 2px;
+  cursor: pointer;
+}
+
+.btn-join:hover {
+  background-color: rgba(27, 163, 163, 0.678);
 }
 
 .input-join {
-  height: 30px;
+  height: 40px;
   width: 250px;
   outline: none;
   border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  font-family: sans-serif;
+  border: solid rgba(255, 255, 255, 0.705) 2px;
 }
+::placeholder {
+  color: white;
+}
+
+
 
 /* .input-join::selection {
 

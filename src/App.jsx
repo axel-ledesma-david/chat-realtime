@@ -22,7 +22,8 @@ function App() {
     <>
       {chat === false ? (
         <div className="container">
-          <h3>Unirse al chat!</h3>
+         <h1>Unirse al chat!</h1>
+         <div className="form-join">
           <input
             type="text"
             className="input-join"
@@ -40,6 +41,7 @@ function App() {
           <button className="btn-join" onClick={joinRoom}>
             Entrar al chat
           </button>
+         </div>
         </div>
       ) : (
           <div className="container">
