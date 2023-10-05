@@ -2,10 +2,15 @@ import { useState, useEffect } from 'react'
 import '../src/Chat.css'
 import ScrollToBottom from 'react-scroll-to-bottom'
 
-const Chat = ({ socket, user, room }) => {
+const Chat = ({ socket, info, room, user }) => {
 
   const [currentMessage, setCurrentMessage] = useState("")
   const [messageList, setMessageList] = useState([])
+  /* const [listStorage, setListStorage] = useState([]) */
+
+  /* console.log(info) */
+
+  /* const { user, room } = info */
 
   const send_message = async () => {
     if (currentMessage !== "") {
@@ -17,25 +22,29 @@ const Chat = ({ socket, user, room }) => {
       }
 
       await socket.emit("send_message", dataMsg)
+      localStorage.setItem("messages", JSON.stringify(dataMsg))
+      /* setMessageList(JSON.parse(localStorage.getItem("messages"))) */
       setMessageList(list => [...list, dataMsg])
       setCurrentMessage("")
       document.querySelector(".chat-messages").scrollIntoView({
         block: "end"
       })
-
     }
   }
 
   useEffect(() => {
     socket.on("receive_message", data => {
-      console.log(data)
+      /* console.log(data) */
+      /* localStorage.removeItem("messages") */
+      localStorage.setItem("messages", JSON.stringify(data))
       setMessageList(list => [...list, data])
+      /* setMessageList(JSON.parse(localStorage.getItem("messages"))) */
+      /* setListStorage(messageList) */
     })
     return () => socket.removeListener("receive_message")
-  }, [socket])
+  }, [socket, messageList])
 
   return (
-    <>
       <div className="chat">
         <div className="header-chat">
           <div className="circle"></div>
@@ -59,7 +68,6 @@ const Chat = ({ socket, user, room }) => {
         <button className='send-btn' onClick={send_message} >&#9658;</button>
       </div>
       </div>
-    </>
   )
 }
 

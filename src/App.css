@@ -1,8 +1,3 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
-} */
 
 .container {
   display: flex;
@@ -60,7 +55,15 @@ h1 {
   color: white;
 }
 
-
+.btn-exit {
+  width: 150px;
+  padding: 15px;
+  font-family: sans-serif;
+  color: white;
+  background-color: darkcyan;
+  border: none;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 686px){
   .form-join {
@@ -75,6 +78,3 @@ h1 {
   }
 }
 
-/* .input-join::selection {
-
-} */
